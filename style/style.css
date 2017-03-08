@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+.board {
+    position: relative;
+    width: 1024px;
+    height: 863px;
+    margin: auto;
+    background-image: url(../img/board.jpg);
+    background-repeat: no-repeat;
+}
+
+.board .message {
+    position: absolute;
+   left: 50px;
+    top:0;
+    color:rgb(83, 175, 19);
+    font-size: 2em;
+}
+
+.board .formShips {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(83, 175, 19);
+    padding: 20px;
+}
+
+.board .formShips .input {
+    font-size: 1em;
+    background-color: rgb(152, 207, 113);
+    border-color: rgb(83, 175, 19);
+}
+
+.board .tableShips {
+    position: absolute;
+    left: 173px;
+    top: 98px;
+    border-spacing: 0;
+}
+
+.board .tableShips .tdShips {
+    width: 94px;
+    height: 94px;
+}
+
+.hit {
+    background-image: url(../img/ship.png);
+   background-repeat: no-repeat;
+    background-position: center center;
+     width: 94px;
+    height: 94px;
+}
+
+.miss {
+    background-image: url(../img/miss.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+     width: 94px;
+    height: 94px;
+}
