@@ -1,3 +1,4 @@
+// MODEL
 var model = {
 	boardSize: 7,
 	numShips: 3,
@@ -15,12 +16,10 @@ var model = {
 			var ship = this.ships[i];
 			var index = ship.locations.indexOf(guess);
 
-			// To jest usprawnienie! Sprawdzamy, czy okręt nie 
-			// został już trafiony, wyświetlamy stosowny komunikat
-			// użytkownikowi i kończymy działanie.
+			// Sprawdzamy, czy okręt niezostał już trafiony
 			if (ship.hits[index] === "hit") {
-				view.displayMessage("Ups, już wcześnej trafiłeś to pole!");
-				return true;
+				view.displayMessage("Powtórka? Już wcześnej trafiłeś w ten cel!");
+				return false;
 			} else if (index >= 0) {
 				ship.hits[index] = "hit";
 				view.displayHit(guess);
@@ -93,10 +92,9 @@ var model = {
 		}
 		return false;
 	}
-	
 };
 
-
+// WIDOK
 var view = {
 	displayMessage: function(msg) {
 		var messageArea = document.getElementById("messageArea");
@@ -111,6 +109,7 @@ var view = {
 		cell.setAttribute("class", "miss");}
 };
 
+// KONTROLER
 var controller = {
 	guesses: 0,
 
