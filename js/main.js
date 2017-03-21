@@ -22,10 +22,14 @@ var model = {
 				return false;
 			} else if (index >= 0) {
 				ship.hits[index] = "hit";
+                var snd = new Audio("../mp3/Shot.mp3");
+                    snd.autoplay = true;
 				view.displayHit(guess);
 				view.displayMessage("TRAFIONY!");
 
 				if (this.isSunk(ship)) {
+                    var snd = new Audio("../mp3/TaDa.mp3");
+                    snd.autoplay = true;
 					view.displayMessage("Zatopiłeś mój okręt!");
 					this.shipsSunk++;
 				}
